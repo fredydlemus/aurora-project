@@ -1,0 +1,17 @@
+name: Backup Repository
+on: workflow_dispatch
+jobs:
+    s3Backup:
+        runs-on: ubuntu-latest
+        environment: development
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v2
+            - name: S3 Backup
+              uses: peter-evans/s3-backup@v1
+              env:
+                ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+                MIRROR_TARGET: aurora-github-repository-backup/${{ github.repository }}
+                SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+              with:
+                args: --overwrite --remove  
