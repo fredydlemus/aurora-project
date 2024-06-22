@@ -10,10 +10,12 @@ jobs:
         steps:
             - name: Checkout Repository
               uses: actions/checkout@v2
+            - name: Archive Repository
+              run: tar -czf ${GITHUB_WORKSPACE}/${GITHUB_REPOSITORY##*/}.tar.gz .
             - name: Configure AWS credentials
               uses: aws-actions/configure-aws-credentials@v2
               with:
                 role-to-assume: ${{secrets.AWS_ROLE_TO_ASSUME}}
                 aws-region: ${{secrets.AWS_REGION}}
             - name: Sync Repository to S3
-              run: aws s3 sync . s3://${{vars.BACKUP_BUCKET_NAME}}/${{github.event.repository.name}} --delete --exact-timestamps
+              run: aws s3 sync . s3://${{vars.BACKUP_BUCKET_NAME}} --delete
