@@ -2,8 +2,8 @@ name: Backup Repository
 on: workflow_dispatch
 jobs:
     s3Backup:
-        runs-on: ubuntu-latest
         environment: development
+        runs-on: ubuntu-latest
         steps:
             - name: Checkout Repository
               uses: actions/checkout@v2
