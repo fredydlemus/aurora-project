@@ -24,4 +24,4 @@ jobs:
                 aws-region: ${{secrets.AWS_REGION}}
             - name: Sync Repository to S3
               run: |
-                aws s3 sync . s3://${{vars.BACKUP_BUCKET_NAME}} --delete --exclude "*" --include "*.tar.gz"
+                aws s3 sync . s3://${{vars.BACKUP_BUCKET_NAME}} --exclude "*" --include "*.tar.gz"
