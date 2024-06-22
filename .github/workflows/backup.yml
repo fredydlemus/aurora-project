@@ -13,9 +13,10 @@ jobs:
             - name: Archive Repository
               run: |
                 mkdir -p /tmp/backup
-                tar -czf /tmp/backup/${{github.event.repository.name}}.tar.gz .
+                timestamp=$(date +%Y%m%d%H%M%S)
+                tar -czf /tmp/backup/${{github.event.repository.name}}_$timestamp.tar.gz .
             - name: Move Archive to Workspace
-              run: mv /tmp/backup/${{github.event.repository.name}}.tar.gz .
+              run: mv /tmp/backup/*.tar.gz .
             - name: Configure AWS credentials
               uses: aws-actions/configure-aws-credentials@v2
               with:
