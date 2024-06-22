@@ -16,4 +16,4 @@ jobs:
                 role-to-assume: ${{secrets.AWS_ROLE_TO_ASSUME}}
                 aws-region: ${{secrets.AWS_REGION}}
             - name: Sync Repository to S3
-              run: aws s3 sync . s3://${{vars.BACKUP_BUCKET_NAME}}/${{github.event.repository.name}} --delete
+              run: aws s3 sync . s3://${{vars.BACKUP_BUCKET_NAME}}/${{github.event.repository.name}} --delete --exact-timestamps
