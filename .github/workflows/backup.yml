@@ -14,8 +14,8 @@ jobs:
               uses: aws-actions/configure-aws-credentials@v2
               with:
                 audience: sts.amazonaws.com
-                role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-                aws-region: ${{ secrets.AWS_REGION }}
+                role-to-assume: arn:aws:iam::851725510984:role/GitHubActionsRole
+                aws-region: us-east-1
             - name: S3 Backup
               uses: peter-evans/s3-backup@v1
               env:
