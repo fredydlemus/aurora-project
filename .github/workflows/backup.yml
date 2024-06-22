@@ -11,7 +11,11 @@ jobs:
             - name: Checkout Repository
               uses: actions/checkout@v2
             - name: Archive Repository
-              run: tar -czf ${{github.event.repository.name}}.tar.gz .
+              run: |
+                mkdir -p /tmp/backup
+                tar -czf /tmp/backup/${{github.event.repository.name}}.tar.gz .
+            - name: Move Archive to Workspace
+              run: mv /tmp/backup/${{github.event.repository.name}}.tar.gz .
             - name: Configure AWS credentials
               uses: aws-actions/configure-aws-credentials@v2
               with:
