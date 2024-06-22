@@ -7,11 +7,14 @@ jobs:
         steps:
             - name: Checkout Repository
               uses: actions/checkout@v2
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v2
+              with:
+                role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+                aws-region: ${{ secrets.AWS_REGION }}
             - name: S3 Backup
               uses: peter-evans/s3-backup@v1
               env:
-                ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
                 MIRROR_TARGET: aurora-github-repository-backup/${{ github.repository }}
-                SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
               with:
                 args: --overwrite --remove  
