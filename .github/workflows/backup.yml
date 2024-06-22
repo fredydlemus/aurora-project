@@ -11,7 +11,7 @@ jobs:
             - name: Checkout Repository
               uses: actions/checkout@v2
             - name: Archive Repository
-              run: tar -czf ${GITHUB_WORKSPACE}/${GITHUB_REPOSITORY##*/}.tar.gz .
+              run: tar -czf ${{github.repository}}.tar.gz .
             - name: Configure AWS credentials
               uses: aws-actions/configure-aws-credentials@v2
               with:
