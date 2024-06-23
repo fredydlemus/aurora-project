@@ -2,5 +2,5 @@ name: Backup Repository
 on: workflow_dispatch
 jobs:
   backup-workflow:
-    uses: fredydlemus/github-actions-templates/.github/workflows/backup.yml@main
+    uses: fredydlemus/gh-actions-templates/.github/workflows/backup.yml@main
     
