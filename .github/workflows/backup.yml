@@ -1,5 +1,8 @@
 name: Backup Repository
 on: workflow_dispatch
+permissions:
+  id-token: write
+  contents: read
 jobs:
   backup-workflow:
     uses: fredydlemus/gh-actions-templates/.github/workflows/backup.yml@main
