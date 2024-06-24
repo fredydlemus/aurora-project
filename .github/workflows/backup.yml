@@ -6,4 +6,4 @@ permissions:
 jobs:
   backup-workflow:
     uses: fredydlemus/gh-actions-templates/.github/workflows/backup.yml@main
-    
+    secrets: inherit
