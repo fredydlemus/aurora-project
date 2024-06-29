@@ -1,0 +1,8 @@
+name: PR Validations
+on:
+    pull_request:
+        types: [opened, edited, reopened, synchronize]
+jobs:
+    pr-validations-workflow:
+        uses: fredydlemus/gh-actions-templates/.github/workflows/pr-validations.yml@main
+        secrets: inherit
