@@ -8,3 +8,5 @@ In this repository, you will find a NestJS backend that contains only one defaul
 > If you believe that can aggregate value to this repo don't hesitate to do it!!!!
 
 Various workflows use reusable workflows that you can find in: [GH repository action templates](https://github.com/fredydlemus/gh-actions-templates)
+
+[![Publish to Docker](https://github.com/fredydlemus/aurora-project/actions/workflows/publish.yml/badge.svg)](https://github.com/fredydlemus/aurora-project/actions/workflows/publish.yml)
