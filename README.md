@@ -6,3 +6,5 @@ Hi! I'm Fredy and this is the **Aurora** project, this project is to learn about
 In this repository, you will find a NestJS backend that contains only one default endpoint. However, it serves as a foundation to demonstrate how to implement different workflows to automate various tasks. Examples include backing up a repository to S3 on the administrative side and creating pipelines to publish a new Docker image when a push occurs on the main branch, etc.
 
 > If you believe that can aggregate value to this repo don't hesitate to do it!!!!
+
+Various workflows use reusable workflows that you can find in: [GH repository action templates](https://github.com/fredydlemus/gh-actions-templates)
