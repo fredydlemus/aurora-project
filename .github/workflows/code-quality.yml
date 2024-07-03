@@ -1,0 +1,8 @@
+name: Code Quaility
+on:
+    pull_request:
+        types: [opened, edited, reopened, synchronize]
+jobs:
+    code-quality-workflow:
+        uses: fredydlemus/gh-actions-templates/.github/workflows/code-quality.yml@main
+        secrets: inherit
